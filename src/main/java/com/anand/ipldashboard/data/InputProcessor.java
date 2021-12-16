@@ -30,6 +30,7 @@ public class InputProcessor implements ItemProcessor<MatchInput, Match> {
         match.setTeam1(firstInningsTeam);
         match.setTeam2(secondInningsTeam);
 
+        match.setTossWinner(matchInput.getTossWinner());
         match.setWinner(matchInput.getWinner());
         match.setResult(matchInput.getResult());
         match.setResultMargin(matchInput.getResultMargin());
