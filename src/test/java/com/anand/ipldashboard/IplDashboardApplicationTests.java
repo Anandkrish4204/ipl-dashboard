@@ -1,4 +1,4 @@
-package com.anand.iplDashboard;
+package com.anand.ipldashboard;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
