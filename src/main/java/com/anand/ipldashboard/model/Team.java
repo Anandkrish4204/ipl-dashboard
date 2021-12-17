@@ -1,18 +1,18 @@
 package com.anand.ipldashboard.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @ToString
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,6 +20,8 @@ public class Team {
     private String teamName;
     private long noOfMatches;
     private long noOfMatchesWon;
+    @Transient
+    private List<Match> matches;
 
     public Team(String teamName, long noOfMatches) {
         this.teamName = teamName;
