@@ -26,6 +26,7 @@ export const TeamPage = ()=> {
     <div className="TeamPage">
       <h2>{team.teamName}</h2>  
       <TeamCard teamName = {teamName} matchArg = {team.matches[0]}/>
+      <h2>Latest Matches -2</h2>
       {team.matches.slice(1).map(match=><DetailsCard teamName ={teamName} matchArg={match}/>)}
     </div>
   );
