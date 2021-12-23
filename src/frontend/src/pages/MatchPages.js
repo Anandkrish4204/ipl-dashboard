@@ -1,6 +1,9 @@
 import {React,useEffect,useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { TeamCard } from '../components/TeamCard';
+import { YearList } from '../components/YearList';
+
+import './MatchPage.scss'
 
 export const MatchPage = ()=>{
 
@@ -22,8 +25,15 @@ export const MatchPage = ()=>{
     if(!matches) return null;
     return(
         <div className="MatchPage">
-            <h1>Match Page</h1>
-            {matches.map(match=> <TeamCard teamName={teamName} matchArg={match}/>)}
+            <div className='year-selector-section' > 
+                <h3>Select Year</h3>
+                <YearList teamName={teamName}/>
+            </div>
+            <div>
+                <h1 className='match-header-section'>{teamName} matches in {year}</h1>
+                {matches.map(match=> <TeamCard teamName={teamName} matchArg={match}/>)}
+            </div>
+            
         </div>
     )
 }
