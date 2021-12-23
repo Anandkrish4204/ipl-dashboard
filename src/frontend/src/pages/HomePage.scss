@@ -1,0 +1,11 @@
+.appName{
+    font-size: 3rem;
+    margin: 20px auto;
+}
+
+.HomePage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    justify-self:normal;
+}
