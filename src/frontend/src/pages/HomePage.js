@@ -14,7 +14,7 @@ export const HomePage = ()=>{
 
             const fetchTeams = async ()=>{
 
-                const response = await fetch("http://localhost:8080/teams");
+                const response = await fetch(`${process.env.REACT_APP_HOST}/teams`);
                 const data = await response.json()
                 setTeams(data)
             };
@@ -30,7 +30,7 @@ export const HomePage = ()=>{
         <div >
             <h1 className='appName'>IPL Dashboard</h1>
             <div className='HomePage'>
-                {teams.map(team=><TeamListCard teamName = {team.teamName}/>)}
+                {teams.map(team=><TeamListCard key={team.id} teamName = {team.teamName}/>)}
             </div>
         </div>
         

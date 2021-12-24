@@ -13,7 +13,7 @@ export const MatchPage = ()=>{
         ()=>{
 
             const fetchMatchesByYear = async ()=>{
-                const response = await fetch(`http://localhost:8080/team/${teamName}/matches?year=${year}`)
+                const response = await fetch(`${process.env.REACT_APP_HOST}/team/${teamName}/matches?year=${year}`)
                 const data = await response.json()
                 setMatches(data)
             }
@@ -31,7 +31,7 @@ export const MatchPage = ()=>{
             </div>
             <div>
                 <h1 className='match-header-section'>{teamName} matches in {year}</h1>
-                {matches.map(match=> <TeamCard teamName={teamName} matchArg={match}/>)}
+                {matches.map(match=> <TeamCard key={match.id} teamName={teamName} matchArg={match}/>)}
             </div>
             
         </div>
